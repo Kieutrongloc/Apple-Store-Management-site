@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Addict - Store Management</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/font/themify-icons/Themify IconFonts 5-23-2014.json">
+    <link rel="stylesheet" href="assets/font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="header-bar">
+            <div class="header-nav">
+                <i style="padding: 0px 6px;" class="fa-brands fa-apple"></i>
+                <p>Home</p>
+                <p>/</p>
+                <p>Products</p>
+            </div>
+            <div class="header-button">
+                <a style="text-decoration: none;color: black;" href=""><i style="padding: 0px 6px;" class="fa-brands fa-apple"></i> Apple Store Products Management</a>
+                <i href=""><i class="fa-regular fa-bell"></i></i>
+                <a style="border: solid 1px gray;border-radius: 10px;padding: 3px; font-size: 14px;">Support Center</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- navigation -->
+    <nav class="nav-body">
+        <aside class="nav-body-sidebar">
+            <div class="sidebar-list">
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-regular fa-book"></i>Order Management</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-solid fa-cube"></i>Product Management</p>
+                        <i class="fa-regular fa-chevron-up"></i>
+                    </div>
+                    <ul class="list-function-child">
+                        <li style="list-style: none;padding:16px 26px 0px;color: blue;font-weight: bold;">Manage products</li>
+                        <li style="list-style: none;padding:16px 26px 0px;">Products in stocks</li>
+                    </ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-regular fa-bullhorn"></i>Marketing Channel</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-solid fa-message"></i>Promotion Message</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-regular fa-wallet"></i>Finance</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-regular fa-chart-simple"></i>Data</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+                <div class="list-functions">
+                    <div class="list-function-parent">
+                        <p class="function-item"><i style="padding-right: 10px;" class="fa-regular fa-gear"></i>Setting</p>
+                        <i class="fa-regular fa-chevron-down"></i>
+                    </div>
+                    <ul class="list-function-child"></ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main article -->
+        <article class="nav-body-products-article">
+            <div class="article-nav">
+                <p style="color: blue;font-weight: bolder;border-bottom: solid 2px blue;padding-bottom: 10px;">All products</p>
+                <p>Available</p>
+                <p>Out of stock</p>
+            </div>
+            <h1 style="font-size: 30px;">Product list</h1>
+            <div class="article-category-accessories">
+                <h2 style="padding: 0px 0px 20px 20px;">Accessories</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <th>Name Demo</th>
+                        <th><img src="" alt="Img demo"></th>
+                        <th><p>Status Demo - check</p></th>
+                        <th>99$ Demo</th>
+                        <th><button>Edit</button><button style="color: red;">Remove</button></th>
+                    </tr>
+                </table>
+                <div class="accessories-input">
+                    <input type="text" placeholder="Product name">
+                    <input type="text" placeholder="Image link">
+                    <select name="Status" id="status">
+                        <option value="New">New</option>
+                        <option value="Free Engraving">Free Engraving</option>
+                    </select>
+                    <input type="number" placeholder="Price">
+                    <input type="submit" value="Submit">    
+                </div>
+            </div>
+
+            <div class="article-category-loudandclear">
+                <h2 style="padding: 0px 0px 20px 20px;">Loud and clear</h2>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <th>Name Demo</th>
+                        <th><img src="" alt="Img demo"></th>
+                        <th><p>Status Demo - check</p></th>
+                        <th>99$ Demo</th>
+                        <th><button>Edit</button><button style="color: red;">Remove</button></th>
+                    </tr>
+                </table>
+                <div class="loudandclear-input">
+                    <input type="text" placeholder="Product name">
+                    <input type="text" placeholder="Image link">
+                    <select name="Status" id="status">
+                        <option value="New">New</option>
+                        <option value="Free Engraving">Free Engraving</option>
+                    </select>
+                    <input type="number" placeholder="Price">
+                    <input type="submit" value="Submit">    
+                </div>
+            </div>
+            
+        </article>
+
+    </nav>
+</body>
+</html>
