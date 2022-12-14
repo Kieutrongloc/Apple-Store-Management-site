@@ -7,7 +7,7 @@
     <title>Apple Addict - Store Management</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/font/themify-icons/Themify IconFonts 5-23-2014.json">
+    <!-- <link rel="stylesheet" href="assets/font/themify-icons/Themify IconFonts 5-23-2014.json"> -->
     <link rel="stylesheet" href="assets/font/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -48,7 +48,7 @@
                     </div>
                     <ul class="list-function-child">
                         <li style="list-style: none;padding:16px 26px 0px;color: blue;font-weight: bold;">Manage products</li>
-                        <li style="list-style: none;padding:16px 26px 0px;">Products in stocks</li>
+                        <li style="list-style: none;padding:16px 26px 0px;">Products in stock</li>
                     </ul>
                 </div>
                 <div class="list-functions">
@@ -107,26 +107,26 @@
                         <th style="width: 12%;">Price</th>
                         <th style="width:18%">Action</th>
                     </tr>
-                    <tr>
-                        <td>Name Demo</td>
-                        <td><img src="" alt="Img demo"></td>
-                        <td><p>Status Demo - check</p></td>
-                        <td>99$ Demo</td>
-                        <td><button>Edit</button><button style="color: red;">Remove</button></td>
+                    <tr class="accessories-cell-list">
+                        <td class="accessories-cell-name">Name Demo</td>
+                        <td><img class="accessories-cell-img" src="" alt="Img demo"></td>
+                        <td class="accessories-cell-status">Status Demo - check</td>
+                        <td class="accessories-cell-price">99$ Demo</td>
+                        <td><button class="accessories-btn-edit">Edit</button><button class="accessories-btn-remove" style="color: red;">Remove</button></td>
                     </tr>
                 </table>
                 <div class="accessories-input">
                     <label for="product name">Product Name:</label>
-                    <input style="width: 300px;" type="text" required>
+                    <input class="accinput-name" style="width: 300px;" type="text" required>
                     <label for="image link">Image link:</label>
-                    <input style="width: 300px;" type="text" required>
+                    <input class="accinput-img" style="width: 300px;" type="text" required>
                     <label for="status">Status:</label>
-                    <select style="width:fit-content;" name="Status" id="status">
+                    <select class="accinput-status" style="width:fit-content;" name="Status" id="status">
                         <option value="New">New</option>
                         <option value="Free Engraving">Free Engraving</option>
                     </select>
                     <label for="price">Price:</label>
-                    <input style="width: 80px;" type="number" required>
+                    <input class="accinput-price" style="width: 80px;" type="number" required>
                     <input class="accessories-submit" type="submit" value="Submit">
                 </div>
             </div>
@@ -141,12 +141,12 @@
                         <th style="width: 12%;">Price</th>
                         <th style="width:18%">Action</th>
                     </tr>
-                    <tr>
-                        <td>Name Demo</td>
-                        <td><img src="" alt="Img demo"></td>
-                        <td><p>Status Demo - check</p></td>
-                        <td>99$ Demo</td>
-                        <td><button>Edit</button><button style="color: red;">Remove</button></td>
+                    <tr class="loudandclear-cell-list">
+                        <td class="loudandclear-cell-name">Name Demo</td>
+                        <td><img class="loudandclear-cell-img" src="" alt="Img demo"></td>
+                        <td class="loudandclear-cell-status">Status Demo - check</td>
+                        <td class="loudandclear-cell-price">99$ Demo</td>
+                        <td><button class="loudandclear-btn-edit">Edit</button><button class="accessories-btn-remove" style="color: red;">Remove</button></td>
                     </tr>
                 </table>
                 <div class="loudandclear-input">
@@ -161,12 +161,13 @@
                     </select>
                     <label for="price">Price:</label>
                     <input style="width: 80px;" type="number" required>
-                    <input class="accessories-submit" type="submit" value="Submit">
+                    <input class="loudandclear-submit" type="submit" value="Submit">
                 </div>
             </div>
             
         </article>
 
     </nav>
+    <script src="main.js"></script>
 </body>
 </html>

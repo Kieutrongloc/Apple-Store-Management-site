@@ -1,1 +1,15 @@
-[{"name" : "Ashwin", "age" : "20"},{"name" : "Abhinandan", "age" : "20"}]
+{
+    "accessoriesList":[{
+"name" : "name demo 1",
+"image" : "link demo 1",
+"status" : "status demo 1",
+"price" : "price demo 1"
+},
+{
+"name" : "name demo 2",
+"image" : "link demo 2",
+"status" : "status demo 2",
+"price" : "price demo 2"
+}]
+}
+
