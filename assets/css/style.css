@@ -79,9 +79,20 @@ html {
 }
 
 table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
     padding: 10px 4px;
     border: 1px solid black;
-    width: 100%;
+    
+}
+
+td {
+    height: 200px;
+    justify-self: center;
+    align-self: center;
 }
 
 button {
@@ -96,4 +107,20 @@ button {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+}
+
+label {
+    padding: 10px 0px 6px;
+}
+
+.accessories-submit, .loudandclear-submit {
+    width: 80px;
+    margin: 10px 0px 40px;
+    border-radius: 10px;
+}
+
+.accessories-submit, .loudandclear-submit:hover {
+    cursor: pointer;
 }

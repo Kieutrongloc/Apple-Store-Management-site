@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="stylesheet" href="assets/font/themify-icons/Themify IconFonts 5-23-2014.json">
-    <link rel="stylesheet" href="assets/font/fontawesome-free-6.2.0-web/css/all.css">
+    <link rel="stylesheet" href="assets/font/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <!-- header -->
@@ -102,27 +103,31 @@
                     <tr>
                         <th>Name</th>
                         <th>Image</th>
-                        <th>Status</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th style="width: 12%;">Status</th>
+                        <th style="width: 12%;">Price</th>
+                        <th style="width:18%">Action</th>
                     </tr>
                     <tr>
-                        <th>Name Demo</th>
-                        <th><img src="" alt="Img demo"></th>
-                        <th><p>Status Demo - check</p></th>
-                        <th>99$ Demo</th>
-                        <th><button>Edit</button><button style="color: red;">Remove</button></th>
+                        <td>Name Demo</td>
+                        <td><img src="" alt="Img demo"></td>
+                        <td><p>Status Demo - check</p></td>
+                        <td>99$ Demo</td>
+                        <td><button>Edit</button><button style="color: red;">Remove</button></td>
                     </tr>
                 </table>
                 <div class="accessories-input">
-                    <input type="text" placeholder="Product name">
-                    <input type="text" placeholder="Image link">
-                    <select name="Status" id="status">
+                    <label for="product name">Product Name:</label>
+                    <input style="width: 300px;" type="text" required>
+                    <label for="image link">Image link:</label>
+                    <input style="width: 300px;" type="text" required>
+                    <label for="status">Status:</label>
+                    <select style="width:fit-content;" name="Status" id="status">
                         <option value="New">New</option>
                         <option value="Free Engraving">Free Engraving</option>
                     </select>
-                    <input type="number" placeholder="Price">
-                    <input type="submit" value="Submit">    
+                    <label for="price">Price:</label>
+                    <input style="width: 80px;" type="number" required>
+                    <input class="accessories-submit" type="submit" value="Submit">
                 </div>
             </div>
 
@@ -132,27 +137,31 @@
                     <tr>
                         <th>Name</th>
                         <th>Image</th>
-                        <th>Status</th>
-                        <th>Price</th>
-                        <th>Action</th>
+                        <th style="width: 12%;">Status</th>
+                        <th style="width: 12%;">Price</th>
+                        <th style="width:18%">Action</th>
                     </tr>
                     <tr>
-                        <th>Name Demo</th>
-                        <th><img src="" alt="Img demo"></th>
-                        <th><p>Status Demo - check</p></th>
-                        <th>99$ Demo</th>
-                        <th><button>Edit</button><button style="color: red;">Remove</button></th>
+                        <td>Name Demo</td>
+                        <td><img src="" alt="Img demo"></td>
+                        <td><p>Status Demo - check</p></td>
+                        <td>99$ Demo</td>
+                        <td><button>Edit</button><button style="color: red;">Remove</button></td>
                     </tr>
                 </table>
                 <div class="loudandclear-input">
-                    <input type="text" placeholder="Product name">
-                    <input type="text" placeholder="Image link">
-                    <select name="Status" id="status">
+                    <label for="product name">Product Name:</label>
+                    <input style="width: 300px;" type="text" required>
+                    <label for="image link">Image link:</label>
+                    <input style="width: 300px;" type="text" required>
+                    <label for="status">Status:</label>
+                    <select style="width:fit-content;" name="Status" id="status">
                         <option value="New">New</option>
                         <option value="Free Engraving">Free Engraving</option>
                     </select>
-                    <input type="number" placeholder="Price">
-                    <input type="submit" value="Submit">    
+                    <label for="price">Price:</label>
+                    <input style="width: 80px;" type="number" required>
+                    <input class="accessories-submit" type="submit" value="Submit">
                 </div>
             </div>
             
