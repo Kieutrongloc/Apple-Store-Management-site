@@ -1,6 +1,8 @@
+import * as fs from 'fs';
 
+var myAPI = "http://127.0.0.1:5500/data.json";
 
-var myAPI = "http://127.0.0.1:5500/data.json"
+fs.writeFile('myjsonfile.json', 'text', 'utf8');
 
 
 function start() {
@@ -29,22 +31,23 @@ function createAccessoriesProduct(data,callback) {
         },
         body: JSON.stringify(data)
     };
+    console.log('options', options)
     fetch(myAPI, options)
         .then(function(response) {
             response.json();
         })
-        .then(Callback)
+        .then(callback)
 }
 
 function renderAccessorieslist(accessoriesList) {
     var CellName = document.querySelector('.accessories-cell-name').innerHTML
     // HOW THE HELL KO LAY DC NAME
     accessoriesList.map(getName);
-    var CellnameJSON = function getName(item) {
+    var CellNameJson = function getName(item) {
         return [item.name]
     }
     accessoriesCellName = CellnameJSON
-    console.log(accessoriesList)
+    // console.log(accessoriesList)
 }
 
 
