@@ -22,10 +22,10 @@ if(isset($_POST["accessories-submit"])){
   $image = $_POST['accessories-image'];
   $status = $_POST['accessories-status'];
   $price = $_POST['accessories-price'];
-  $sql = "UPDATE accessories SET name = '$name', image = '$image', status = '$status', price = '$price' WHERE id=".$_GET["id"];
-  
+  $sql = "UPDATE accessories SET name = '$name', image = '$image', status = '$status', price = '$price' WHERE id=".$_POST["accessories-id"];
   if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
+    // echo "Record updated successfully";
+    header("Location: http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
@@ -138,7 +138,8 @@ if(isset($_POST["accessories-submit"])){
             <div class="article-category-accessories">
                 <h2 style="padding: 0px 0px 20px 20px;">Accessories</h2>
 
-                <form class="accessories-input" action="accessories-add.php" method="post">
+                <form class="accessories-input" action="accessories-update.php" method="post">
+                    <input value="<?php echo $id ?>" name="accessories-id" id="accessories-id" class="accinput-name" type="hidden">
                     <div class="accessories-input-group">
                         <label for="product name">Product Name:</label>
                         <input value="<?php echo $name ?>" name="accessories-name" id="accessories-name" class="accinput-name" style="width: 300px;" type="text" required>
@@ -150,11 +151,11 @@ if(isset($_POST["accessories-submit"])){
                     <div class="accessories-input-group">
                         <label for="status">Status:</label>
                         <div>
-                            <input name="accessories-status" type="radio" checked id="New" value="<?php echo $status ?>">
+                            <input name="accessories-status" type="radio" id="New" value="New" <?php echo $status === 'New' ? 'checked' : ''; ?> />
                             <label for="New">New</label>
                         </div>
                         <div>
-                            <input name="accessories-status" type="radio" checked id="Free-Engraving" value="<?php echo $status ?>">
+                            <input name="accessories-status" type="radio" id="Free-Engraving" value="Free-Engraving"  <?php echo $status === 'Free-Engraving' ? 'checked' : ''; ?>/>
                             <label for="Free-Engraving">Free Engraving</label>
                         </div>
                     </div>
