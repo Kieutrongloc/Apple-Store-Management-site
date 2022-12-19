@@ -4,7 +4,7 @@ $name = "";
 $image = "";
 $status = "";
 $price = 0;
-// if(isset($_GET["name"]) && isset($_GET["id"]) && isset($_GET["status"]) && isset($_GET["price"])){
+
 if(isset($_GET["id"])){
   $id = $_GET["id"];
   $sqlGetId = "SELECT * FROM accessories WHERE id = ".$id;
@@ -15,8 +15,8 @@ if(isset($_GET["id"])){
   $status = $row[3];
   $price = $row[4];
 }
-// Cho nay la update nhung no lai create new
 
+// Cho nay la update nhung no lai create new
 if(isset($_POST["accessories-submit"])){
   $name = $_POST['accessories-name'];
   $image = $_POST['accessories-image'];
@@ -26,7 +26,6 @@ if(isset($_POST["accessories-submit"])){
   
   if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
-    // require "index.php";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
