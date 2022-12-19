@@ -17,4 +17,4 @@ $conn->close();
 ?>
 
 <br>
-<a style="color:black;" href="http://localhost/www/manage_product/Apple-Store-Management-site/">Click here to go back to Product manager</a>
+<a style="color:black;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage">Click here to go back to Product manager</a>

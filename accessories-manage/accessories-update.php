@@ -31,7 +31,7 @@ if(isset($_POST["accessories-submit"])){
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
   // mysqli_query($conn,$sql) or die("Update Error");
-  header('Location: http://localhost/www/manage_product/Apple-Store-Management-site/');
+//   header('Location: http://localhost/www/manage_product/Apple-Store-Management-site/');
 }
 
 ?>

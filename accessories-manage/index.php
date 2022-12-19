@@ -126,8 +126,8 @@
                         <td class="accessories-cell-status"><?php echo $row["status"] ?></td>
                         <td class="accessories-cell-price"><?php echo $row["price"]?></td>
                         <td>
-                            <a style="color: black;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-update.php?id=<?php echo $row["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                            <a style="color: red;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-delete.php/?id=<?php echo $row["id"]?>"><i class="fa-solid fa-trash"></i></a>
+                            <a style="color: black;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/accessories-update.php?id=<?php echo $row["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a style="color: red;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/accessories-delete.php/?id=<?php echo $row["id"]?>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                 <?php }} ?>
