@@ -13,7 +13,7 @@ if(isset($_POST['accessories-submit'])) {
   VALUES ('$name', '$image', '$status', '$price')";
   
   if ($conn->query($sql) === TRUE) {
-    require 'index.php';
+    header("Location: http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
