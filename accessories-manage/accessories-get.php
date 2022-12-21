@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "name: " . $row["name"]. " - image: " . $row["image"]. " " . $row["last_name"]. "<br>";
+    // "name: " . $row["name"]. " - image: " . $row["image"]. " " . $row["image"]. "<br>";
     $accessories[] = $row;
   }
   echo json_encode($accessories); die;

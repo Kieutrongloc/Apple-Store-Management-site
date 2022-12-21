@@ -41,7 +41,6 @@ button.addEventListener("click",function(event){{
 function addcart(productImg, productName,productPrice,productPriceNumber) {
   var addtr = document.createElement("div")
   var cartItem = document.querySelectorAll(".subnav-item-list")
-  // addtr.classList.add("subnav-item-list")
   
   for (var i=0;i<cartItem.length;i++) {
     var productNewAdd = document.querySelectorAll(".checkout-item-name")
@@ -128,11 +127,13 @@ function inputChange() {
 
 
 
+
+
 // REFERENCE
 // + Ngay sau khi tạo <tr>  mới trong <tbody>
 //    nên add ngay event "Click" cho button Xóa trong  <tr> mới tạo ra, như thế đỡ tạo lại vòng lập check thẻ <tr>  ?
 //   ============================
-// function addcart(productPrice, productImg, productName) {
+// function cart(productPrice, productImg, productName) {
 //   // Xử lý thêm <Tr> cho <Tbody>
 //   var addtr = document.createElement("tr");
 //   var cartItem = document.querySelectorAll("tbody tr");

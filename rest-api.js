@@ -13,7 +13,10 @@
 //     console.log(cart)
 //    });
 
-const cartApi = 'http://localhost/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php';
+
+// SHOW PRODUCT AT HOMEPAGE
+
+const cartApi = 'http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/accessories-get.php';
 
 function start() {
     getCart(function(cart){
@@ -32,22 +35,69 @@ function getCart(callback) {
 }
 
 // GET 
+
 function renderCart(cart) {
-    var productName = document.querySelector(".checkout-item-name");
-    var productImage = document.querySelector(".checkout-item-img");
-    var productQuantity = document.querySelector(".checkout-item-qtt");
-    var productPrice = document.querySelector(".checkout-item-price");
+    var addProduct = document.createElement("div")
+    var productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632925511000" alt="" class="accessories-nav-item-img"><ul class="nav-item-color"><li class="nav-item-color-dot"><img class="color-dot-img color-dot-brown" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037004000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-whiteblue" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-white" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-white-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037006000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-yellow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037005000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-orange" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-orange-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li></ul><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">New</p><p class="accessories-nav-item-name">HomePod mini - Blue</p><p class="accessories-nav-item-price">$99.00</p></div></div>'
+    for (let i = 0; i < cart.length; i++) {
 
-    var newProductName = cart[0].name;
-    var newProductImage = cart[0].image;
-    var newProductQuantity = cart[0].quantity;
-    var newProductPrice = cart[0].price;
+        var productName = document.querySelector(".accessories-nav-item-name");
+        var productImage = document.querySelector(".accessories-nav-item-img");
+        var productStatus = document.querySelector(".nav-item-accessories-status");
+        var productPrice = document.querySelector(".accessories-nav-item-price");
+    
+        var newProductName = cart[i].name;
+        var newProductImage = cart[i].image;
+        var newProductStatus = cart[i].status;
+        var newProductPrice = cart[i].price;
+    
+        productName.innerHTML = newProductName;
+        productImage.src = newProductImage;
+        productStatus.innerHTML = newProductStatus;
+        productPrice.innerHTML = '$'+ newProductPrice;
+    }
 
-    productName.innerHTML = newProductName;
-    productImage.src = newProductImage;
-    productQuantity.value = newProductQuantity;
-    productPrice.innerHTML = '$'+ newProductPrice;
+    addProduct.innerHTML = productContent
+    var productTable = document.querySelector(".cart-checkout-table-item")
 }
+
+//END OF SHOW PRODUCT LIST AT HOMEPAGE
+
+// const cartApi = 'http://localhost/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php';
+
+// function start() {
+//     getCart(function(cart){
+//         renderCart(cart);
+//     });
+// }
+
+// start();
+
+// function getCart(callback) {
+//     fetch(cartApi)
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(callback);
+// }
+
+// // GET 
+// function renderCart(cart) {
+//     var productName = document.querySelector(".checkout-item-name");
+//     var productImage = document.querySelector(".checkout-item-img");
+//     var productQuantity = document.querySelector(".checkout-item-qtt");
+//     var productPrice = document.querySelector(".checkout-item-price");
+
+//     var newProductName = cart[0].name;
+//     var newProductImage = cart[0].image;
+//     var newProductQuantity = cart[0].quantity;
+//     var newProductPrice = cart[0].price;
+
+//     productName.innerHTML = newProductName;
+//     productImage.src = newProductImage;
+//     productQuantity.value = newProductQuantity;
+//     productPrice.innerHTML = '$'+ newProductPrice;
+// }
 
 
 

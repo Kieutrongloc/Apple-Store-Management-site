@@ -348,7 +348,8 @@
                         <p class="accessories-nav-item-price">$99.00</p>
                     </div>
                 </div>
-                <div href="" class="accessories-nav-item border-radius-shadow hover-style">
+                
+                <!-- <div href="" class="accessories-nav-item border-radius-shadow hover-style">
                     <i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i>
                     <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MPPP3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1662503140974" alt="" class="accessories-nav-item-img">
                     <ul class="nav-item-color">
@@ -417,7 +418,7 @@
                         <p class="accessories-nav-item-name">iPhone 14 Pro Leather Case with MagSafe - Ink</p>
                         <p class="accessories-nav-item-price">$59.00</p>
                     </div>
-                </div>
+                </div> -->
                 <a href="" class="fourth-accessories-nav-box border-radius-shadow hover-style">
                     <div class="accessories-nav-item-main">
                         <h4 class="accessories-nav-item-footer">Explore all accessories.</h4>
