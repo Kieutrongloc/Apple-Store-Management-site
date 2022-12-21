@@ -37,6 +37,8 @@
                     <div id="subnav-cart-checkout">
                         <div class="cart-checkout-table">
                             <div class="cart-checkout-table-item">
+
+                                <!-- hide -->
                                 <!-- <div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list">
                                     <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632925511000" alt="" class="checkout-item-img">
                                     <div class="cart-checkout-item-list">
@@ -63,7 +65,9 @@
                                     </div>
                                     <p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p>
                                 </div> -->
-                                
+                                <!-- hide -->
+
+
                             </div>
                             <div class="subnav-line-through"></div>
                             <p class="subnav-checkout-total"><span class="subnav-checkout-total-number">No item in your cart</span></p>
@@ -704,5 +708,6 @@
         </div>
     </footer>
 <script src="main.js"></script>
+<script src="rest-api.js"></script>
 </body>
 </html>

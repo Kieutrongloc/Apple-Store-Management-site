@@ -10,7 +10,7 @@ function showNavmenu() {
 }
 
 
-// HIDE/UNHIDE CARD CHECKOUT
+// HIDE/UNHIDE CART CHECKOUT
 function showSubnav(event) {
     var x = document.getElementById("subnav-cart-checkout");
     if (x.style.display === "none") {
