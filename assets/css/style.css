@@ -454,7 +454,6 @@ html {
 .accessories-nav-item,
 .additional-devices-nav-item {
     width: 313px;
-    width: 100%;
     display: block;
     padding: 30px;
     background-color: var(--white-color);

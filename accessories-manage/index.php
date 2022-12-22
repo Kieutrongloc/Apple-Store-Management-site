@@ -26,7 +26,7 @@
                 <p>Products</p>
             </div>
             <div class="header-button">
-                <a style="text-decoration: none;color: #f5f5f7;" href="http://localhost/www/manage_product/Apple-Store-Management-site/"><i style="padding: 0px 6px;" class="fa-brands fa-apple"></i> Apple Store</a>
+                <a style="text-decoration: none;color: #f5f5f7;" href="http://127.0.0.1:5500/index.html"><i style="padding: 0px 6px;" class="fa-brands fa-apple"></i> Apple Store</a>
                 <i href=""><i class="fa-solid fa-bell"></i></i>
                 <a style="border: solid 1px gray;border-radius: 10px;padding: 3px; font-size: 14px;">Support Center</a>
             </div>
