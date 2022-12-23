@@ -28,38 +28,37 @@ btn.forEach(function(button,index){
 button.addEventListener("click",function(event){{
   var btnItem = event.target
   var product = btnItem.parentElement
-  var productImg = product.querySelector("img").src
+  var productID = '0';
   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
   var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").innerText
-  var productPriceNumber = productPrice.replace(/\D/g, "")/100;
-  // console.log(productPriceNumber, productImg, productName)
-  addcart(productImg, productName, productPrice, productPriceNumber)
+  addcart(productID, productName, productPrice)
 }})
 })
 
 // // ADD VALUE SELECTED TO CART
-// function addcart(productImg, productName,productPrice,productPriceNumber) {
-//   var addtr = document.createElement("div")
-//   var cartItem = document.querySelectorAll(".subnav-item-list")
-  
-//   for (var i=0;i<cartItem.length;i++) {
-//     var productNewAdd = document.querySelectorAll(".checkout-item-name")
-//     var productQuantity = document.querySelector(".checkout-item-qtt").value
-//     // console.log(productQuantity)
-//     if (productNewAdd[i].innerHTML == productName) {
-//       alert(""+productName+" has been added already. Please update the quantity in your cart!") 
-//       return
-//     }
-//   }
+async function addcart(productID, productName, productPrice) {
+  const data = {
+    id: productID,
+    name: productName, 
+    price: productPrice
+  }
+  const response = await fetch(cartAPI.save, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) 
+  });
+  console.log(response.json())
+  showCart(response.json())
 
-//   var trcontent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+productImg+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+productName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="1" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+productPriceNumber+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p></div>'
-
-//   addtr.innerHTML = trcontent
-//   var cartTable = document.querySelector(".cart-checkout-table-item")
-//   cartTable.append(addtr)
-//   cartTotal()
-//   deleteCart()
-// }
+}
 
 // CACULATE TOTAL PRICE/REMOVE ITEM
 // TOTAL PRICE

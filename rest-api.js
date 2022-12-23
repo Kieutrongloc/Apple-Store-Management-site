@@ -17,8 +17,10 @@
 // SHOW PRODUCT AT HOMEPAGE
 
 const productApi = 'http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/accessories-get.php';
-const cartApi = 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php';
-
+const cartAPI = {
+    'get': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php',
+    'save': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-save.php',
+}
 function start() {
     getProduct(function(product){
         renderProductSlideHTML(product);
@@ -79,7 +81,7 @@ function renderProductSlideHTML(product) {
 
 // GET
 function getItem(callback) {
-    fetch(cartApi)
+    fetch(cartAPI.get)
     .then(function(cartresponse) {
         return cartresponse.json();
     })
@@ -89,40 +91,41 @@ function getItem(callback) {
 function renderCartHTML(cartItem) {
     var cartContent = '';
     var newCartContent = '';
+    console.log(cartItem);
     for (i=0;i<cartItem.length;i++)
     {
         var newCartName = cartItem[i].name;
         var newCartImage = cartItem[i].image;
         var newCartQuantity = cartItem[i].quantity;
-        var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity;
+        var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity
         cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p></div>'
         newCartContent += cartContent
         // b += a[i] + '\n';
+
     }
-    // console.log(b);
 
     $(".cart-checkout-table-item").append(newCartContent);
 }
 
 //POST:
 
-var post = {"name":"1","image":"2","quantity":"3","price":"4"}
-function postItem(callback) {
-    fetch(cartApi), {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(post)
-    }
-    .then((cartresponse) => cartresponse.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-}
+// var post = {"name":"1","image":"2","quantity":"3","price":"4"}
+// function postItem(callback) {
+//     fetch(cartApi), {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(post)
+//     }
+//     .then((cartresponse) => cartresponse.json())
+//     .then((data) => {
+//       console.log('Success:', data);
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error);
+//     });
+// }
 
 
 
