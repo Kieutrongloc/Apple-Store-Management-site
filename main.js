@@ -37,29 +37,29 @@ button.addEventListener("click",function(event){{
 }})
 })
 
-// ADD VALUE SELECTED TO CART
-function addcart(productImg, productName,productPrice,productPriceNumber) {
-  var addtr = document.createElement("div")
-  var cartItem = document.querySelectorAll(".subnav-item-list")
+// // ADD VALUE SELECTED TO CART
+// function addcart(productImg, productName,productPrice,productPriceNumber) {
+//   var addtr = document.createElement("div")
+//   var cartItem = document.querySelectorAll(".subnav-item-list")
   
-  for (var i=0;i<cartItem.length;i++) {
-    var productNewAdd = document.querySelectorAll(".checkout-item-name")
-    var productQuantity = document.querySelector(".checkout-item-qtt").value
-    // console.log(productQuantity)
-    if (productNewAdd[i].innerHTML == productName) {
-      alert(""+productName+" has been added already. Please update the quantity in your cart!") 
-      return
-    }
-  }
+//   for (var i=0;i<cartItem.length;i++) {
+//     var productNewAdd = document.querySelectorAll(".checkout-item-name")
+//     var productQuantity = document.querySelector(".checkout-item-qtt").value
+//     // console.log(productQuantity)
+//     if (productNewAdd[i].innerHTML == productName) {
+//       alert(""+productName+" has been added already. Please update the quantity in your cart!") 
+//       return
+//     }
+//   }
 
-  var trcontent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+productImg+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+productName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="1" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+productPriceNumber+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p></div>'
+//   var trcontent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+productImg+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+productName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="1" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+productPriceNumber+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p></div>'
 
-  addtr.innerHTML = trcontent
-  var cartTable = document.querySelector(".cart-checkout-table-item")
-  cartTable.append(addtr)
-  cartTotal()
-  deleteCart()
-}
+//   addtr.innerHTML = trcontent
+//   var cartTable = document.querySelector(".cart-checkout-table-item")
+//   cartTable.append(addtr)
+//   cartTotal()
+//   deleteCart()
+// }
 
 // CACULATE TOTAL PRICE/REMOVE ITEM
 // TOTAL PRICE

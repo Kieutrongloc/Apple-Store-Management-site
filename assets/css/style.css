@@ -507,6 +507,7 @@ html {
 .accessories-nav-item-img,
 .additional-devices-nav-item-img {
     padding: 46px 30px 40px;
+    max-width: 240px;
 }
 
 .nav-item-accessories-status,
