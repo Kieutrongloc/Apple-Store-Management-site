@@ -20,6 +20,7 @@ const productApi = 'http://localhost/www/manage_product/Apple-Store-Management-s
 const cartAPI = {
     'get': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php',
     'save': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-save.php',
+    'delete': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-delete.php',
 }
 function start() {
     getProduct(function(product){
@@ -91,23 +92,40 @@ function getItem(callback) {
 function renderCartHTML(cartItem) {
     var cartContent = '';
     var newCartContent = '';
-    console.log(cartItem);
+    // console.log(cartItem);
     for (i=0;i<cartItem.length;i++)
     {
+        var newCartId = cartItem[i].id;
         var newCartName = cartItem[i].name;
         var newCartImage = cartItem[i].image;
         var newCartQuantity = cartItem[i].quantity;
         var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity
-        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove">Remove</p></div>'
+        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
         newCartContent += cartContent
-        // b += a[i] + '\n';
-
     }
 
     $(".cart-checkout-table-item").append(newCartContent);
 }
 
-//POST:
+//DELETE:
+function deleteCart(id) {
+    var options = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    };
+    fetch(cartAPI.delete +'/?' + id, options)
+        .then(function(cartresponse) {
+            cartresponse.json();
+        })
+        .then(function() {
+            getItem(renderCartHTML)
+        });
+}
+
+
+// POST:
 
 // var post = {"name":"1","image":"2","quantity":"3","price":"4"}
 // function postItem(callback) {
