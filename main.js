@@ -26,6 +26,7 @@ function addCart(event, id) {
   var btnItem = event.target
   var product = btnItem.parentElement
   var productID = id;
+  console.log(product)
   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
   var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").dataset.price
   var productImage = product.querySelector(".accessories-nav-item-img").src
@@ -93,7 +94,7 @@ function renderCartHTML(cartItem) {
 // CACULATE TOTAL PRICE/REMOVE ITEM
 // TOTAL PRICE
 
-function cartTotal (){
+function cartTotal() {
   var cartItem = document.querySelectorAll(".cart-checkout-item-list")
   var totalPriceCart = 0
   for (var i=0;i<cartItem.length;i++) {
@@ -106,9 +107,8 @@ function cartTotal (){
   }
   var cartTotal = document.querySelector(".subnav-checkout-total-number")
   cartTotal.innerHTML = "Total: $" + totalPriceCart +".00"
-  
+  // console.log(cartTotal)
 }
-
 
  // (CACULATE TOTAL ITEMS AT "BAG")
  function bagQuanity() {

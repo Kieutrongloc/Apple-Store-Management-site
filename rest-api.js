@@ -21,6 +21,7 @@ const cartAPI = {
     'get': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-get.php',
     'save': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-save.php',
     'delete': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-delete.php',
+    'update': 'http://127.0.0.1/www/manage_product/Apple-Store-Management-site/rest-api/cart-update.php',
 }
 function start() {
     getProduct(function(product){
@@ -70,7 +71,7 @@ function renderProductSlideHTML(product) {
         newProductContent += productContent
         // b += a[i] + '\n';
     }
-    console.log(newProductId);
+    // console.log(newProductId);
 
     $(".fourth-accessories-nav").append(newProductContent);
 }
@@ -102,7 +103,7 @@ function renderCartHTML(cartItem) {
         var newCartImage = cartItem[i].image;
         var newCartQuantity = cartItem[i].quantity;
         var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity
-        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input onclick="inputChange('+newCartId+')" style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
+        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input onclick="inputChange(event, '+newCartId+')" style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
         newCartContent += cartContent
     }
     $(".cart-checkout-table-item").append(newCartContent);
@@ -130,12 +131,26 @@ function deleteCart(id) {
 
 //UPDATE///(CHANGE QUANTITY ONLY)
 
-function inputChange(id) {
-        var cartItem = document.querySelectorAll(".cart-checkout-item-list")
-        var inputValue = cartItem[0].querySelector("input").value
-        console.log(inputValue)
+function inputChange(event, id) {
+        var quantity = parseInt(event.target.parentElement.querySelector("input").value)
+        // console.log(quantity)
+        var options = {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        };
+        fetch(cartAPI.update, options)
+            .then(function(cartresponse) {
+                cartresponse.json().then(function(data){
+                    renderCartHTML(data)
+                  })
+            })
+            .then(function() {
+            });
 
-    //   }
+
 }
 
 

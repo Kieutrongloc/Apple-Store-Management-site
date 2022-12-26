@@ -3,7 +3,6 @@ require "cart-connection.php";
 $id = $_REQUEST["id"];
 $quantity = $_REQUEST["quantity"];
 
-// sql to delete a record
 $sql = "UPDATE cart SET quantity = '$quantity' WHERE id=".$id;
 
 if ($conn->query($sql) === TRUE) {
@@ -21,5 +20,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-
-?>
