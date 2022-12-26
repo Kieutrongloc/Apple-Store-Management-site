@@ -1,33 +1,25 @@
 <?php
 require "cart-connection.php";
-$name = "";
-$image = "";
-$quantity = "";
-$price = 0;
+$id = $_REQUEST["id"];
+$quantity = $_REQUEST["quantity"];
 
-// if(isset($_GET["id"])){
-//   $id = $_GET["id"];
-//   $sqlGetId = "SELECT * FROM accessories WHERE id = ".$id;
-//   $result = mysqli_query($conn, $sqlGetId);
-//   $row = mysqli_fetch_row($result);
-//   $name = $row[1];
-//   $image = $row[2];
-//   $status = $row[3];
-//   $price = $row[4];
-// }
+// sql to delete a record
+$sql = "UPDATE cart SET quantity = '$quantity' WHERE id=".$id;
 
-// Cho nay la update nhung no lai create new
-// if(isset($_POST["accessories-submit"])){
-  $name = $_POST['accessories-name'];
-  $image = $_POST['accessories-image'];
-  $status = $_POST['accessories-status'];
-  $price = $_POST['accessories-price'];
-  $sql = "UPDATE cart SET name = '$name', image = '$image', status = '$status', price = '$price' WHERE id=".$_POST["accessories-id"];
-  if ($conn->query($sql) === TRUE) {
-    echo "Record updated successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }
-// }
+if ($conn->query($sql) === TRUE) {
+  $cart = [];
+    $sql = "SELECT * FROM cart";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $cart[] = $row;
+        }
+    } 
+    echo json_encode($cart); die;
+} else {
+  echo "Error deleting record: " . mysqli_error($conn);
+}
+
+$conn->close();
 
 ?>

@@ -50,27 +50,27 @@ function getProduct(callback) {
 //         var newProductImage = product[i].image;
 //         var newProductStatus = product[i].status;
 //         var newProductPrice = product[i].price;
-//         productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><ul class="nav-item-color"><li class="nav-item-color-dot"><img class="color-dot-img color-dot-brown" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037004000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-whiteblue" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-white" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-white-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037006000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-yellow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037005000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-orange" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-orange-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li></ul><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price">$'+newProductPrice+'.00</p></div></div>'
+//         productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><ul class="nav-item-color"><li class="nav-item-color-dot"><img class="color-dot-img color-dot-brown" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037004000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-whiteblue" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-white" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-white-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037006000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-yellow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037005000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-orange" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-orange-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li></ul><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price" data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
 //         $(".fourth-accessories-nav").append(productContent);
 //     }
 // }
 
 
 function renderProductSlideHTML(product) {
-    // var a = [1,2,3,4,5];
     var productContent = '';
     var newProductContent = '';
     for (i=0;i<product.length;i++)
     {
+        var newProductId = product[i].id
         var newProductName = product[i].name;
         var newProductImage = product[i].image;
         var newProductStatus = product[i].status;
         var newProductPrice = product[i].price;
-        productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><ul class="nav-item-color"><li class="nav-item-color-dot"><img class="color-dot-img color-dot-brown" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037004000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-whiteblue" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-white" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-white-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037006000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-yellow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037005000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-orange" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-orange-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li></ul><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price">$'+newProductPrice+'.00</p></div></div>'
+        productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><ul class="nav-item-color"><li class="nav-item-color-dot"><img class="color-dot-img color-dot-brown" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-spacegray-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037004000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-whiteblue" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-blue-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-white" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-white-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037006000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-yellow" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037005000" alt=""></li><li class="nav-item-color-dot"><img class="color-dot-img color-dot-orange" src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-orange-202110_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1634037003000" alt=""></li></ul><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price"  data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
         newProductContent += productContent
         // b += a[i] + '\n';
     }
-    // console.log(b);
+    console.log(newProductId);
 
     $(".fourth-accessories-nav").append(newProductContent);
 }
@@ -93,17 +93,18 @@ function renderCartHTML(cartItem) {
     var cartContent = '';
     var newCartContent = '';
     // console.log(cartItem);
+    $(".cart-checkout-table-item").html('');
     for (i=0;i<cartItem.length;i++)
     {
         var newCartId = cartItem[i].id;
+        // console.log(newCartId)
         var newCartName = cartItem[i].name;
         var newCartImage = cartItem[i].image;
         var newCartQuantity = cartItem[i].quantity;
         var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity
-        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
+        cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input onclick="inputChange('+newCartId+')" style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
         newCartContent += cartContent
     }
-
     $(".cart-checkout-table-item").append(newCartContent);
 }
 
@@ -115,13 +116,26 @@ function deleteCart(id) {
             'Content-Type': 'application/json'
         },
     };
-    fetch(cartAPI.delete +'/?' + id, options)
+    fetch(cartAPI.delete +'/?id=' + id, options)
         .then(function(cartresponse) {
-            cartresponse.json();
+            cartresponse.json().then(function(data){
+                renderCartHTML(data)
+              })
         })
         .then(function() {
-            getItem(renderCartHTML)
         });
+    // getItem(renderCartHTML)
+}
+
+
+//UPDATE///(CHANGE QUANTITY ONLY)
+
+function inputChange(id) {
+        var cartItem = document.querySelectorAll(".cart-checkout-item-list")
+        var inputValue = cartItem[0].querySelector("input").value
+        console.log(inputValue)
+
+    //   }
 }
 
 

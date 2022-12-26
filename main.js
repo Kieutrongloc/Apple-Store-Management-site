@@ -22,43 +22,71 @@ function showSubnav(event) {
 
 
 // SELECT VALUE TO CART BUTTON
-const btn = document.querySelectorAll("i.nav-item-add")
-// console.log(btn)
-btn.forEach(function(button,index){
-button.addEventListener("click",function(event){{
+function addCart(event, id) {
   var btnItem = event.target
   var product = btnItem.parentElement
-  var productID = '0';
+  var productID = id;
   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
-  var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").innerText
-  addcart(productID, productName, productPrice)
-}})
-})
+  var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").dataset.price
+  var productImage = product.querySelector(".accessories-nav-item-img").src
+  addcart(productID, productName, productPrice, productImage)
+}
+
+
+// const btn = document.querySelector("i.nav-item-add")
+// console.log(btn)
+// //btn.forEach(function(button,index){
+// // button.addEventListener("click",function(event){{
+// //   console.log(event)
+// //   var btnItem = event.target
+// //   var product = btnItem.parentElement
+// //   var productID = '0';
+// //   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
+// //   var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").innerText
+// //   addcart(productID, productName, productPrice)
+// // }})
+// //})
 
 // // ADD VALUE SELECTED TO CART
-async function addcart(productID, productName, productPrice) {
+async function addcart(productID, productName, productPrice, productImage) {
   const data = {
     id: productID,
     name: productName, 
-    price: productPrice
+    price: productPrice,
+    image: productImage
   }
   const response = await fetch(cartAPI.save, {
     method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin', 
     headers: {
+      'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
     body: JSON.stringify(data) 
   });
-  console.log(response.json())
-  showCart(response.json())
+  response.json().then(function(data){
+    renderCartHTML(data)
+  })
 
 }
 
+function renderCartHTML(cartItem) {
+  var cartContent = '';
+  var newCartContent = '';
+  // console.log(cartItem);
+  for (i=0;i<cartItem.length;i++)
+  {
+      var newCartId = cartItem[i].id;
+      // console.log(newCartId)
+      var newCartName = cartItem[i].name;
+      var newCartImage = cartItem[i].image;
+      var newCartQuantity = cartItem[i].quantity;
+      var newCartPrice = parseInt(cartItem[i].price)*newCartQuantity
+      cartContent = '<div style="display: flex;justify-content: space-between;padding-bottom: 10px;" class="subnav-item-list"><img src="'+newCartImage+'" alt="" class="checkout-item-img"><div class="cart-checkout-item-list"><div style="display: flex;"><p style="color:black" class="checkout-item-name">'+newCartName+'</p></div><div style="display: flex;justify-content: space-between;"><input style="max-width: 40px;" type="number" value="'+newCartQuantity+'" min="1" class="checkout-item-qtt"><p style="color:black" class="checkout-item-price"><span>$</span><span class="checkout-item-pricenumber">'+newCartPrice+'</span><span>.00</span></p></div></div><p style="color:red;margin: 20px 0px;cursor: pointer;" class="checkout-item-remove" onclick="deleteCart('+newCartId+')">Remove</p></div>'
+      newCartContent += cartContent
+  }
+  console.log(cartItem, newCartContent)
+  $(".cart-checkout-table-item").append(newCartContent);
+}
 
 
 
@@ -100,20 +128,20 @@ function cartTotal (){
 
 
 // Delete item from checkout cart
-function deleteCart() {
-  var cartItem = document.querySelectorAll(".subnav-item-list")
-  for (var i=0;i<cartItem.length;i++) {
-    var removeButton = document.querySelectorAll(".checkout-item-remove")
-    removeButton[i].addEventListener("click",function(event){
-      var cartDelete = event.target
-      var cartItemRemove = cartDelete.parentElement
-      cartItemRemove.remove()
-      cartTotal()
+// function deleteCart() {
+//   var cartItem = document.querySelectorAll(".subnav-item-list")
+//   for (var i=0;i<cartItem.length;i++) {
+//     var removeButton = document.querySelectorAll(".checkout-item-remove")
+//     removeButton[i].addEventListener("click",function(event){
+//       var cartDelete = event.target
+//       var cartItemRemove = cartDelete.parentElement
+//       cartItemRemove.remove()
+//       cartTotal()
       
-      // console.log(cartItemRemove)
-    })   
-  }
-}
+//       // console.log(cartItemRemove)
+//     })   
+//   }
+// }
 
 function inputChange() {
   var cartItem = document.querySelectorAll(".subnav-item-list")
