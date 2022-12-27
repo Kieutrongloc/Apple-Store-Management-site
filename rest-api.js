@@ -141,7 +141,7 @@ function inputChange(event, id) {
                 'Content-Type': 'application/json'
             },
         };
-        fetch(cartAPI.update, options)
+        fetch(cartAPI.update +'/?id=' + id +'&quantity=' + quantity, options)
             .then(function(cartresponse) {
                 cartresponse.json().then(function(data){
                     renderCartHTML(data)
@@ -152,27 +152,6 @@ function inputChange(event, id) {
 
 
 }
-
-
-// POST:
-
-// var post = {"name":"1","image":"2","quantity":"3","price":"4"}
-// function postItem(callback) {
-//     fetch(cartApi), {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(post)
-//     }
-//     .then((cartresponse) => cartresponse.json())
-//     .then((data) => {
-//       console.log('Success:', data);
-//     })
-//     .catch((error) => {
-//       console.error('Error:', error);
-//     });
-// }
 
 
 

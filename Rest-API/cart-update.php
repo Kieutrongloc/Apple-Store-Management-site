@@ -16,7 +16,8 @@ if ($conn->query($sql) === TRUE) {
     } 
     echo json_encode($cart); die;
 } else {
-  echo "Error deleting record: " . mysqli_error($conn);
+  echo "Error updating record: " . mysqli_error($conn);
 }
 
 $conn->close();
+?>
