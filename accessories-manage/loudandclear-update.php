@@ -1,5 +1,5 @@
 <?php
-require "accessories-connection.php";
+require "loudandclear-connection.php";
 $name = "";
 $image = "";
 $status = "";
@@ -7,7 +7,7 @@ $price = 0;
 
 if(isset($_GET["id"])){
   $id = $_GET["id"];
-  $sqlGetId = "SELECT * FROM accessories WHERE id = ".$id;
+  $sqlGetId = "SELECT * FROM loudandclear WHERE id = ".$id;
   $result = mysqli_query($conn, $sqlGetId);
   $row = mysqli_fetch_row($result);
   $name = $row[1];
@@ -17,12 +17,12 @@ if(isset($_GET["id"])){
 }
 
 // Cho nay la update nhung no lai create new
-if(isset($_POST["accessories-submit"])){
-  $name = $_POST['accessories-name'];
-  $image = $_POST['accessories-image'];
-  $status = $_POST['accessories-status'];
-  $price = $_POST['accessories-price'];
-  $sql = "UPDATE accessories SET name = '$name', image = '$image', status = '$status', price = '$price' WHERE id=".$_POST["accessories-id"];
+if(isset($_POST["loudandclear-submit"])){
+  $name = $_POST['loudandclear-name'];
+  $image = $_POST['loudandclear-image'];
+  $status = $_POST['loudandclear-status'];
+  $price = $_POST['loudandclear-price'];
+  $sql = "UPDATE loudandclear SET name = '$name', image = '$image', status = '$status', price = '$price' WHERE id=".$_POST["loudandclear-id"];
   if ($conn->query($sql) === TRUE) {
     // echo "Record updated successfully";
     header("Location: http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage");
@@ -134,35 +134,35 @@ if(isset($_POST["accessories-submit"])){
                 <p>Out of stock</p>
             </div>
             <h1 style="font-size: 30px;">Product list</h1>
-            <div class="article-category-accessories">
-                <h2 style="padding: 0px 0px 20px 20px;">Accessories</h2>
+            <div class="article-category-loudandclear">
+                <h2 style="padding: 0px 0px 20px 20px;">loudandclear</h2>
 
-                <form class="accessories-input" action="accessories-update.php" method="post">
-                    <input value="<?php echo $id ?>" name="accessories-id" id="accessories-id" class="accinput-name" type="hidden">
-                    <div class="accessories-input-group">
+                <form class="loudandclear-input" action="loudandclear-update.php" method="post">
+                    <input value="<?php echo $id ?>" name="loudandclear-id" id="loudandclear-id" class="accinput-name" type="hidden">
+                    <div class="loudandclear-input-group">
                         <label for="product name">Product Name:</label>
-                        <input value="<?php echo $name ?>" name="accessories-name" id="accessories-name" class="accinput-name" style="width: 300px;" type="text" required>
+                        <input value="<?php echo $name ?>" name="loudandclear-name" id="loudandclear-name" class="accinput-name" style="width: 300px;" type="text" required>
                     </div>
-                    <div class="accessories-input-group">
+                    <div class="loudandclear-input-group">
                         <label for="image link">Image link:</label>
-                        <input value="<?php echo $image ?>" name="accessories-image" id="accessories-image" class="accinput-img" style="width: 300px;" type="text" required>                        
+                        <input value="<?php echo $image ?>" name="loudandclear-image" id="loudandclear-image" class="accinput-img" style="width: 300px;" type="text" required>                        
                     </div>
-                    <div class="accessories-input-group">
+                    <div class="loudandclear-input-group">
                         <label for="status">Status:</label>
                         <div>
-                            <input name="accessories-status" type="radio" id="New" value="New" <?php echo $status === 'New' ? 'checked' : ''; ?> />
+                            <input name="loudandclear-status" type="radio" id="New" value="New" <?php echo $status === 'New' ? 'checked' : ''; ?> />
                             <label for="New">New</label>
                         </div>
                         <div>
-                            <input name="accessories-status" type="radio" id="Free-Engraving" value="Free-Engraving"  <?php echo $status === 'Free-Engraving' ? 'checked' : ''; ?>/>
+                            <input name="loudandclear-status" type="radio" id="Free-Engraving" value="Free-Engraving"  <?php echo $status === 'Free-Engraving' ? 'checked' : ''; ?>/>
                             <label for="Free-Engraving">Free Engraving</label>
                         </div>
                     </div>
-                    <div class="accessories-input-group">                        
+                    <div class="loudandclear-input-group">                        
                         <label for="price">Price:</label>
-                        <input value="<?php echo $price ?>" name="accessories-price" id="accessories-price" type="number" class="accinput-price" style="width: 80px;" type="number" required>                        
+                        <input value="<?php echo $price ?>" name="loudandclear-price" id="loudandclear-price" type="number" class="accinput-price" style="width: 80px;" type="number" required>                        
                     </div>
-                    <input name="accessories-submit" class="accessories-submit" type="submit" value="Update">
+                    <input name="loudandclear-submit" class="loudandclear-submit" type="submit" value="Update">
                 </form>
             </div>
         </article>

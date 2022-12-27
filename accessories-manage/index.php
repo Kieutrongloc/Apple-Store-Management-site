@@ -1,4 +1,4 @@
-<?php include("accessories-connection.php") ?>
+<?php include("accessories-connection.php"); include("loudandclear-connection.php")?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -172,37 +172,55 @@
                         <th style="width: 12%;">Price</th>
                         <th style="width:18%">Action</th>
                     </tr>
-
-                    <tr class="loudandclear-cell-list">
-                        <td class="loudandclear-cell-name">Name Demo</td>
-                        <td><img class="loudandclear-cell-img" src="" alt="Img demo"></td>
-                        <td class="loudandclear-cell-status">Status Demo - check</td>
-                        <td class="loudandclear-cell-price">99$ Demo</td>
-                        <td><button class="loudandclear-btn-edit">Edit</button><button class="accessories-btn-remove" style="color: red;">Remove</button></td>
+                    
+                <?php
+                    require 'loudandclear-connection.php';
+                    $sql = "SELECT * FROM loudandclear ORDER BY id";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                    $count = 0;
+                    while ($row = $result->fetch_assoc()) {
+                        $count++;
+                ?>  
+                    <tr class="loudandclear-cell-list"> 
+                        <td class="loudandclear-cell-name"> <?php echo $row["name"] ?></td>
+                        <td><img style="height: 200px;width: 200px;" class="loudandclear-cell-img" src="<?php echo $row["image"] ?>" alt="Img demo"></td>
+                        <td class="loudandclear-cell-status"><?php echo $row["status"] ?></td>
+                        <td class="loudandclear-cell-price"><?php echo $row["price"]?></td>
+                        <td>
+                            <a style="color: black;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/loudandclear-update.php?id=<?php echo $row["id"] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                            <a style="color: red;" href="http://localhost/www/manage_product/Apple-Store-Management-site/accessories-manage/loudandclear-delete.php/?id=<?php echo $row["id"]?>"><i class="fa-solid fa-trash"></i></a>
+                        </td>
                     </tr>
+                <?php }} ?>
                 </table>
-                <form class="accessories-input" action="add.php" method="post">
+                
+
+                <form class="loudandclear-input" action="loudandclear-add.php" method="post">
                     <div class="loudandclear-input-group">
                         <label for="product name">Product Name:</label>
-                        <input class="accinput-name" style="width: 300px;" type="text" required>
+                        <input name="loudandclear-name" id="loudandclear-name" class="accinput-name" style="width: 300px;" type="text" required>
                     </div>
                     <div class="loudandclear-input-group">
                         <label for="image link">Image link:</label>
-                        <input class="accinput-img" style="width: 300px;" type="text" required>                        
+                        <input name="loudandclear-image" id="loudandclear-image" class="accinput-img" style="width: 300px;" type="text" required>                        
                     </div>
                     <div class="loudandclear-input-group">
                         <label for="status">Status:</label>
-                        <select class="accinput-status" style="width:fit-content;" name="Status" id="status">
-                            <option value="New">New</option>
-                            <option value="Free Engraving">Free Engraving</option>
-                        </select>                        
+                        <div>
+                            <input name="loudandclear-status" type="radio" checked id="New" value="New">
+                            <label for="New">New</label>
+                        </div>
+                        <div>
+                            <input name="loudandclear-status" type="radio" checked id="Free-Engraving" value="Free-Engraving">
+                            <label for="Free-Engraving">Free Engraving</label>
+                        </div>
                     </div>
-                    <div class="loudandclear-input-group">
-                        
+                    <div class="loudandclear-input-group">                        
                         <label for="price">Price:</label>
-                        <input type="number" class="accinput-price" style="width: 80px;" type="number" required>                        
+                        <input name="loudandclear-price" id="loudandclear-price" type="number" class="accinput-price" style="width: 80px;" type="number" required>                        
                     </div>
-                    <input class="loudandclear-submit" type="submit" value="Submit">
+                    <input name="loudandclear-submit" class="loudandclear-submit" type="submit" value="Submit">
                 </form>
             </div>
             

@@ -118,7 +118,7 @@ button {
     flex-direction: column;
 }
 
-.accessories-input-group, loudandclear-input-group {
+.accessories-input-group, .loudandclear-input-group {
     padding: 10px;
     display: flex;
     flex-direction: column;

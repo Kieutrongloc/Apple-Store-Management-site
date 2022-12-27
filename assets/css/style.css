@@ -146,6 +146,11 @@ html {
     line-height: 14px;
 }
 
+.cart-checkout-table-item {
+    max-height: 406px;
+    overflow: auto;
+}
+
 #subnav-cart-checkout {
     background-color: var(--white-color);
     border-radius: 10px;

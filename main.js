@@ -33,21 +33,6 @@ function addCart(event, id) {
   addcart(productID, productName, productPrice, productImage)
 }
 
-
-// const btn = document.querySelector("i.nav-item-add")
-// console.log(btn)
-// //btn.forEach(function(button,index){
-// // button.addEventListener("click",function(event){{
-// //   console.log(event)
-// //   var btnItem = event.target
-// //   var product = btnItem.parentElement
-// //   var productID = '0';
-// //   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
-// //   var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").innerText
-// //   addcart(productID, productName, productPrice)
-// // }})
-// //})
-
 // // ADD VALUE SELECTED TO CART
 async function addcart(productID, productName, productPrice, productImage) {
   const data = {
@@ -152,73 +137,3 @@ function inputChange() {
     })
   }
 }
-
-
-
-
-
-
-// REFERENCE
-// + Ngay sau khi tạo <tr>  mới trong <tbody>
-//    nên add ngay event "Click" cho button Xóa trong  <tr> mới tạo ra, như thế đỡ tạo lại vòng lập check thẻ <tr>  ?
-//   ============================
-// function cart(productPrice, productImg, productName) {
-//   // Xử lý thêm <Tr> cho <Tbody>
-//   var addtr = document.createElement("tr");
-//   var cartItem = document.querySelectorAll("tbody tr");
-//   for (var i = 0; i < cartItem.length; i++) {
-//     var itemName = cartItem[i].querySelector(".item_name").innerHTML;
-//     if (itemName == productName) {
-//       alert("Sản phẩm 「" + productName + "」 bạn chọn đã có trong giỏ hàng !");
-//       return;
-//     }
-//   }
-//   var trContent =
-//     "<tr>" +
-//     '<td style="display: flex; align-items: center;"><img style="width:100px;" src="' +
-//     productImg +
-//     '" alt="Iphone thumb"><span class="item_name">' +
-//     productName +
-//     "</span>" +
-//     "</td>" +
-//     "<td>" +
-//     "<p>" +
-//     '<span class="item_price">' +
-//     productPrice +
-//     "</span>" +
-//     "<sub>đ</sub>" +
-//     "</p>" +
-//     "</td>" +
-//     "<td>" +
-//     '<input class="item_quantity" style="width:30px; outline:none;" type="number" value="1" min="1">' +
-//     "</td>" +
-//     '<td style="cursor: pointer"><span class="item_delete">Xóa</span></td>' +
-//     "</tr>";
-//   addtr.innerHTML = trContent;
-//   var cartTable = document.querySelector("tbody");
-//   cartTable.append(addtr);
-
-//   // move đến thẻ <tr> mới tạo ra
-
-//   var lastTr = cartTable.lastElementChild;
-
-//   // Xử lý event cho button 'xóa' 
-//   var itemDelete = lastTr.querySelector(".item_delete");
-//   itemDelete.addEventListener("click", function (event) {
-//     var target = event.target;
-//     var targetTr = target.parentElement.parentElement;
-//     targetTr.remove();
-//    // Reset lại giá tổng
-//     cartTotal();
-//   });
-
-//   // Xử lý event update số lượng sản phẩm
-//   var quantityChange = lastTr.querySelector(".item_quantity");
-//   quantityChange.addEventListener("change", function (event) {
-//    // Reset lại giá tổng
-//     cartTotal();
-//   });
-
-//   // Tính tổng giá tiền
-//   cartTotal();
-// }
