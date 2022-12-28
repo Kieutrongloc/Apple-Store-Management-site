@@ -18,6 +18,9 @@ function start() {
     getItem(function(cartItem){
         renderCartHTML(cartItem);
     })
+    getProductLoudandclear(function(productLoudandclear){
+        renderProductSlideHTMLLoudandclear(productLoudandclear);
+    });
 }
 
 start();
@@ -34,16 +37,16 @@ function getProductAccesories(callback) {
 }
 
 function renderProductSlideHTMLAccessories(productAccessories) {
-    var productContent = '';
-    var newProductContent = '';
+    let productContent = '';
+    let newProductContent = '';
     for (i=0;i<productAccessories.length;i++)
     {
-        var newProductId = productAccessories[i].id
-        var newProductName = productAccessories[i].name;
-        var newProductImage = productAccessories[i].image;
-        var newProductStatus = productAccessories[i].status;
-        var newProductPrice = productAccessories[i].price;
-        productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price"  data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
+        let newProductId = productAccessories[i].id
+        let newProductName = productAccessories[i].name;
+        let newProductImage = productAccessories[i].image;
+        let newProductStatus = productAccessories[i].status;
+        let newProductPrice = productAccessories[i].price;
+        productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price" data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
         newProductContent += productContent
     }
     $(".fourth-accessories-nav").append(newProductContent);
@@ -60,20 +63,20 @@ function getProductLoudandclear(callback) {
 }
 
 function renderProductSlideHTMLLoudandclear(productLoudandclear) {
-    var productContent = '';
-    var newProductContent = '';
+    let productContent = '';
+    let newProductContent = '';
     for (i=0;i<productLoudandclear.length;i++)
     {
-        var newProductId = productLoudandclear[i].id
-        var newProductName = productLoudandclear[i].name;
-        var newProductImage = productLoudandclear[i].image;
-        var newProductStatus = productLoudandclear[i].status;
-        var newProductPrice = productLoudandclear[i].price;
-        // productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price"  data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
-        productContent = '<div href="" class="additional-devices-nav-item border-radius-shadow hover-style"><i class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;color:black;"></i><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MU8F2?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1540596407165" alt="" class="additional-devices-nav-item-img"><div class="devices-nav-item-text-box"><p class="nav-item-devices-status">Free Engraving</p><p class="devices-nav-item-name">Apple Pencil (2nd generation)</p><p class="devices-nav-item-price">$129.00</p></div></div>'
+        let newProductId = productLoudandclear[i].id
+        let newProductName = productLoudandclear[i].name;
+        let newProductImage = productLoudandclear[i].image;
+        let newProductStatus = productLoudandclear[i].status;
+        let newProductPrice = productLoudandclear[i].price;
+        productContent = '<div href="" class="additional-devices-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;color:black;"></i><img src="'+newProductImage+'" alt="" class="additional-devices-nav-item-img"><div class="devices-nav-item-text-box"><p class="nav-item-devices-status">'+newProductStatus+'</p><p class="devices-nav-item-name">'+newProductName+'</p><p class="devices-nav-item-price" data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
         newProductContent += productContent
     }
-    $(".fourth-accessories-nav").append(newProductContent);
+    // console.log(newProductContent)
+    $(".fifth-additional-devices-nav").append(newProductContent);
 }
 
 //------CART API------------
