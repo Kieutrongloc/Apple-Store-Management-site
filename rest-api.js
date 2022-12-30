@@ -46,7 +46,7 @@ function renderProductSlideHTMLAccessories(productAccessories) {
         let newProductImage = productAccessories[i].image;
         let newProductStatus = productAccessories[i].status;
         let newProductPrice = productAccessories[i].price;
-        productContent = '<div href="" class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price" data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div>'
+        productContent = '<div <div class="accessories-nav-item border-radius-shadow hover-style"><i onclick="addCart(event, '+newProductId+')" class="nav-item-add fa-solid fa-cart-plus" style="float: right;cursor: pointer;"></i><img src="'+newProductImage+'" alt="" class="accessories-nav-item-img"><div class="fourth-accessory-nav-box"><p class="nav-item-accessories-status">'+newProductStatus+'</p><p class="accessories-nav-item-name">'+newProductName+'</p><p class="accessories-nav-item-price" data-price="'+newProductPrice+'">$'+newProductPrice+'.00</p></div></div></div>'
         newProductContent += productContent
     }
     $(".fourth-accessories-nav").append(newProductContent);

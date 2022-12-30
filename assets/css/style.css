@@ -39,7 +39,7 @@ html {
 }
 
 .overflow-hidden {
-    overflow: auto;
+    /* overflow: auto; */
     /* overflow-y: visible; */
 }
 
@@ -316,9 +316,8 @@ html {
 .top-devices-intro-content {
     display: flex;
 }
-
 .top-devices-intro-items {
-    padding: 0px 20px 0px 0px;
+    padding: 0px 20px 0px 0px!important;
     position: relative;
     color: var(--white-color);
 }
@@ -395,6 +394,11 @@ html {
 
 .main-third-store-nav {
     display: flex;
+    max-height: 320px;
+}
+
+.ec__nav {
+    margin-bottom: 160px;
 }
 
 .third-store-nav-item {
@@ -403,6 +407,7 @@ html {
     position: relative;
     margin: 0px 20px 54px 0px;
     background-color: var(--white-color);
+    max-width: fit-content;
 }
 
 .store-nav-item-detail {
