@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create your Apple ID - Apple</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/font/fontawesome-free-6.2.0-web/css/all.css">
+</head>
+<body>
+    <div>
+        <!-- HEADER -->
+        <header>
+            <div class="header" id="header">
+                <ul id="header-nav" class="none-address-style">
+                    <li class="nav-res-pchide" onclick="showNavmenu()"><i class="fa-solid fa-bars"></i></li>
+                    <li class="nav-res-mobile-show-appleicon"><a href="http://127.0.0.1:5500/" class="nav-icons"><i class="fa-brands fa-apple"></i></a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Store</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Mac</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">iPad</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">iPhone</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Watch</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Airpods</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">TV & Home</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Only on Apple</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Accessories</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-items">Support</a></li>
+                    <li class="nav-res-mobile-hide"><a href="" class="nav-icons"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- HEADER -->
+        <!-- SECTION -->
+        <section>
+            <!-- section-header -->
+            <div class="section-header">
+                <div class="section-header-nav">
+                    <h2 style="font-weight: lighter;">Apple ID</h2>
+                    <div class="header-nav-item">
+                        <a style="color:#666" class="none-address-style" href="">Sign In</a>
+                        <a style="color:#666" class="none-address-style" href="">Create your Apple ID</a>
+                        <a style="color:#666" class="none-address-style" href="">FAQ</a>
+                    </div>
+                </div>
+            </div>
+            <!-- section-header -->
+
+            <!-- section-body -->
+            <div class="section-body">
+                <form action="rest-API/user-account-save.php">
+                    <div class="body-first">
+                            <div style="text-align:center;">
+                            <h1 style="margin-top: 54px">Create Your Apple ID</h1>
+                            <p>One Apple ID is all you need to access all Apple services.<br>Already have an Apple ID? <span><a style="color:#0070C9" class="none-address-style" href="">Find it here ></a></span></p> 
+                            </div>
+                        
+                            <div>
+                                <input name="first-name" class="input-half" type="text" placeholder="First name">
+                                <input name="last-name" style="margin-left:30px" class="input-half" type="text" placeholder="Last name">
+                            </div>
+                            <div>
+                                <p style="font-size: 16px;color:#666;font-weight: bolder;padding-top: 15px;">COUNTRY / REGION</p>
+                                <select class="input-full" name="country" id="country">
+                                    <option value="Vietnam">Vietnam</option>
+                                    <option value="United State">United State</option>
+                                </select>
+                                <br>
+                                <input name="birthday" class="input-full" type="text" placeholder="Birthday (DD/MM/YYYY)">                               
+                            </div>
+                    </div>
+                
+                    <div class="body-second">
+                        <input name="email" class="input-full" type="email" placeholder="name@example.com"><br>
+                        <label style="font-size:14px;color:#666;" for="email">This will be your new Apple ID.</label><br>
+                        <input name="password" class="input-full" type="password" placeholder="Password"><br>
+                        <input name="confirm-password" class="input-full" type="password" placeholder="Confirm password"><br>
+                    </div>
+
+                    <div class="body-third">
+                        <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+                        <small>Be sure to enter a phone number you can always access. It will be used to verify your identity any time you sign in on a new device or web browser. Messaging or data rates may apply.</small>
+                        <div class="third-verify">
+                            <label for="verify">Verify with:</label>
+                            <div>
+                                <input name="verify-with" type="radio" checked id="text-message" value="text-message">
+                                <label for="text-message">Text message</label>
+                            </div>
+                            <div>
+                                <input name="verify-with" type="radio" checked id="phone-call" value="phone-call">
+                                <label for="phone-call">Phone call</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="body-fourth">
+                        <div>
+                            <input type="checkbox" name="Announcements" value="Announcements">
+                            <label for="Announcements">Announcements</label><br>
+                            <small>Receive Apple emails and communications including announcements, marketing, recommendations, and updates about Apple products, services and software.</small>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="ads" value="ads">
+                            <label for="ads">Apps, Music, TV, and More</label><br>
+                            <small>Receive Apple emails and communications including new releases, exclusive content, special offers, and marketing and recommendations for apps, music, movies, TV, books, podcasts, Apple Pay, Apple Card and more.</small>
+                        </div>
+                    </div>
+
+                    <div class="body-fifth">
+                        <img style="height: 40px;width: 40px;" src="https://www.apple.com/legal/images/icon_dataprivacy_2x.png" alt=""><br>
+                        <small style="display:block;text-align:center">Your Apple ID information is used to allow you to sign in securely and access your data. Apple records certain data for security, support and reporting purposes. If you agree, Apple may also use your Apple ID information to send you marketing emails and communications, including based on your use of Apple services. <a style="color:#0070C9" class="none-address-style" href="">See how your data is managed.</a></small><br>
+                        <input type="submit" value="Continue">
+                    </div>
+                </form>
+            </div>
+            <div class="section-footer">
+
+            </div>
+        </section>
+        
+        <!-- SECTION -->
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer">
+                <p class="footer-more-detail">More ways to shop: <a href="" style="text-decoration: none; color: #0066CC;">Find an Apple Store</a> or <a href="" style="text-decoration: none; color: #0066CC;">other retailer</a> near you. Or call 1-800-MY-APPLE</p>
+                <div class="footer-line"></div>
+                <div class="footer-legal">
+                    <div class="footer-legal-list">
+                        <p class="legal-list-copyright">Copyright © 2022 Apple Inc. All rights reserved.</p>
+                        <ul class="legal-list-nav">
+                            <li><a class="legal-list-nav-item hover-underline none-address-style" href="">Privacy Policy</a></li>
+                            <li><a class="legal-list-nav-item hover-underline none-address-style" href="">Terms of Use</a></li>
+                            <li><a class="legal-list-nav-item hover-underline none-address-style" href="">Sales and Refunds</a></li>
+                            <li><a class="legal-list-nav-item hover-underline none-address-style" href="">Legal</a></li>
+                            <li><a class="legal-list-nav-item hover-underline legal-list-nav-item-noborder none-address-style" href="">Site Map</a></li>
+                        </ul>
+                        <p class="vietnam">Vietnam</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER -->
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

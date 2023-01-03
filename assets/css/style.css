@@ -102,9 +102,9 @@ html {
     color: var(--white-color);
 }
 
-.nav-res-pc-hide {
+/* .nav-res-pc-hide {
     display: none;
-}
+} */
 
 .nav-icons  {
     color: var(--white-color);
@@ -686,6 +686,8 @@ html {
 }
 
 /* footer more detail  */
+
+
 
 .footer-more-detail {
     font-size: 12px;
