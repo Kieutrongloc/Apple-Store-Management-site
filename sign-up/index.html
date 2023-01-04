@@ -11,29 +11,7 @@
 </head>
 
 <body>
-        <?php
-            require 'user-account-connection.php';
-            if(isset($_POST['submit'])){
-                $first_name = $_POST['first-name'];
-                $last_name = $_POST['last-name'];
-                $country = $_POST['country'];
-                $birthday = $_POST['birthday'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $verify_with = $_POST['verify-with'];
-                $announcements = $_POST['announcements'];
-                $ads = $_POST['ads'];
-            }
 
-            $sql = "INSERT INTO user_account (first_name, last_name, country, birthday, email, phone, verify_with, announcements, ads)
-            VALUES ('$first_name', '$last_name', '$country', '$birthday', '$email', '$phone', '$verify_with', '$announcements', '$ads')";
-            
-            if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully";
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
-        ?>
     <div>
         <!-- HEADER -->
         <header>
@@ -74,7 +52,7 @@
             <!-- section-body -->
 
             <div class="section-body">
-                <form action="rest-API/user-account-save.php" method="post">
+                <form id="form" action="">
                     <div class="body-first">
                             <div style="text-align:center;">
                             <h1 style="margin-top: 54px">Create Your Apple ID</h1>
@@ -82,8 +60,8 @@
                             </div>
                         
                             <div>
-                                <input name="first-name" class="input-half" type="text" placeholder="First name">
-                                <input name="last-name" style="margin-left:30px" class="input-half" type="text" placeholder="Last name">
+                                <input name="first_name" class="input-half" type="text" placeholder="First name">
+                                <input name="last_name" style="margin-left:30px" class="input-half" type="text" placeholder="Last name">
                             </div>
                             <div>
                                 <p style="font-size: 16px;color:#666;font-weight: bolder;padding-top: 15px;">COUNTRY / REGION</p>
@@ -107,9 +85,9 @@
                         <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone"><br>
                         <small>Be sure to enter a phone number you can always access. It will be used to verify your identity any time you sign in on a new device or web browser. Messaging or data rates may apply.</small>
                         <div class="third-verify">
-                            <label for="verify">Verify with:</label>
+                            <label for="verify_width">Verify with:</label>
                             <div>
-                                <input name="verify-with" type="radio" checked id="text-message" value="text-message">
+                                <input name="verify_with" type="radio" checked id="text-message" value="text-message">
                                 <label for="text-message">Text message</label>
                             </div>
                             <div>
@@ -121,12 +99,14 @@
                     
                     <div class="body-fourth">
                         <div>
-                            <input type="checkbox" name="announcements" value="announcements">
+                            <input type="hidden" name="announcements" value="Not subcribed">
+                            <input type="checkbox" name="announcements" value="Subcribed">
                             <label for="announcements">Announcements</label><br>
                             <small>Receive Apple emails and communications including announcements, marketing, recommendations, and updates about Apple products, services and software.</small>
                         </div>
                         <div>
-                            <input type="checkbox" name="ads" value="ads">
+                            <input type="hidden" name="ads" value="Not subcribed">
+                            <input type="checkbox" name="ads" value="Subcribed">
                             <label for="ads">Apps, Music, TV, and More</label><br>
                             <small>Receive Apple emails and communications including new releases, exclusive content, special offers, and marketing and recommendations for apps, music, movies, TV, books, podcasts, Apple Pay, Apple Card and more.</small>
                         </div>

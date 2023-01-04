@@ -26,7 +26,6 @@ function addCart(event, id) {
   var btnItem = event.target
   var product = btnItem.parentElement
   var productID = id;
-  console.log(product)
   var productName = product.querySelector(".accessories-nav-item-name, .devices-nav-item-name").innerText
   var productPrice = product.querySelector(".accessories-nav-item-price, .devices-nav-item-price").dataset.price
   var productImage = product.querySelector(".accessories-nav-item-img, .additional-devices-nav-item-img").src
