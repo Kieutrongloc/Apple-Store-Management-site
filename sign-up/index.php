@@ -9,7 +9,31 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="../assets/font/fontawesome-free-6.2.0-web/css/all.css">
 </head>
+
 <body>
+        <?php
+            require 'user-account-connection.php';
+            if(isset($_POST['submit'])){
+                $first_name = $_POST['first-name'];
+                $last_name = $_POST['last-name'];
+                $country = $_POST['country'];
+                $birthday = $_POST['birthday'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $verify_with = $_POST['verify-with'];
+                $announcements = $_POST['announcements'];
+                $ads = $_POST['ads'];
+            }
+
+            $sql = "INSERT INTO user_account (first_name, last_name, country, birthday, email, phone, verify_with, announcements, ads)
+            VALUES ('$first_name', '$last_name', '$country', '$birthday', '$email', '$phone', '$verify_with', '$announcements', '$ads')";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        ?>
     <div>
         <!-- HEADER -->
         <header>
@@ -46,10 +70,11 @@
                 </div>
             </div>
             <!-- section-header -->
-
+            
             <!-- section-body -->
+
             <div class="section-body">
-                <form action="rest-API/user-account-save.php">
+                <form action="rest-API/user-account-save.php" method="post">
                     <div class="body-first">
                             <div style="text-align:center;">
                             <h1 style="margin-top: 54px">Create Your Apple ID</h1>
@@ -79,7 +104,7 @@
                     </div>
 
                     <div class="body-third">
-                        <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br>
+                        <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone"><br>
                         <small>Be sure to enter a phone number you can always access. It will be used to verify your identity any time you sign in on a new device or web browser. Messaging or data rates may apply.</small>
                         <div class="third-verify">
                             <label for="verify">Verify with:</label>
@@ -96,8 +121,8 @@
                     
                     <div class="body-fourth">
                         <div>
-                            <input type="checkbox" name="Announcements" value="Announcements">
-                            <label for="Announcements">Announcements</label><br>
+                            <input type="checkbox" name="announcements" value="announcements">
+                            <label for="announcements">Announcements</label><br>
                             <small>Receive Apple emails and communications including announcements, marketing, recommendations, and updates about Apple products, services and software.</small>
                         </div>
                         <div>
@@ -110,7 +135,7 @@
                     <div class="body-fifth">
                         <img style="height: 40px;width: 40px;" src="https://www.apple.com/legal/images/icon_dataprivacy_2x.png" alt=""><br>
                         <small style="display:block;text-align:center">Your Apple ID information is used to allow you to sign in securely and access your data. Apple records certain data for security, support and reporting purposes. If you agree, Apple may also use your Apple ID information to send you marketing emails and communications, including based on your use of Apple services. <a style="color:#0070C9" class="none-address-style" href="">See how your data is managed.</a></small><br>
-                        <input type="submit" value="Continue">
+                        <input type="submit" name="submit" value="Continue">
                     </div>
                 </form>
             </div>
