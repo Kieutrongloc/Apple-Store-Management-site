@@ -1,19 +1,17 @@
 <?php
 require 'user-account-connection.php';
-// $data = json_decode(file_get_contents('php://input'), true);
-// if the input-name=submit clicked, then take the action
-if(isset($_POST['submit'])){
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $country = $_POST['country'];
-    $birthday = $_POST['birthday'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $phone = $_POST['phone'];
-    $verify_with = $_POST['verify_with'];
-    $announcements = $_POST['announcements'];
-    $ads = $_POST['ads'];
-}
+$data = json_decode(file_get_contents('php://input'), true);
+
+    $first_name = $data['first_name'];
+    $last_name = $data['last_name'];
+    $country = $data['country'];
+    $birthday = $data['birthday'];
+    $email = $data['email'];
+    $password = $data['password'];
+    $phone = $data['phone'];
+    $verify_with = $data['verify_with'];
+    $announcements = $data['announcements'];
+    $ads = $data['ads'];
 
 $sql = "INSERT INTO user_account (first_name, last_name, country, birthday, email, password, phone, verify_with, announcements, ads)
   VALUES ('$first_name', '$last_name', '$country', '$birthday', '$email',  '$password', '$phone', '$verify_with', '$announcements', '$ads')";

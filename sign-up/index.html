@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="../assets/font/fontawesome-free-6.2.0-web/css/all.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
+    <script>$( function() {$( "#datepicker" ).datepicker();} );</script>
 </head>
 
 <body>
@@ -52,7 +60,7 @@
             <!-- section-body -->
 
             <div class="section-body">
-                <form id="form" action="">
+                <form id="form-signup" action="" onsubmit="event.preventDefault(); validateMyForm();">
                     <div class="body-first">
                             <div style="text-align:center;">
                             <h1 style="margin-top: 54px">Create Your Apple ID</h1>
@@ -60,53 +68,49 @@
                             </div>
                         
                             <div>
-                                <input name="first_name" class="input-half" type="text" placeholder="First name">
-                                <input name="last_name" style="margin-left:30px" class="input-half" type="text" placeholder="Last name">
+                                <input name="first_name" class="input-half" type="text" placeholder="First name" >
+                                <input name="last_name" style="margin-left:30px" class="input-half" type="text" placeholder="Last name" >
                             </div>
                             <div>
                                 <p style="font-size: 16px;color:#666;font-weight: bolder;padding-top: 15px;">COUNTRY / REGION</p>
-                                <select class="input-full" name="country" id="country">
+                                <select class="input-full country" name="country" id="country">
                                     <option value="Vietnam">Vietnam</option>
                                     <option value="United State">United State</option>
                                 </select>
                                 <br>
-                                <input name="birthday" class="input-full" type="text" placeholder="Birthday (DD/MM/YYYY)">                               
+                                <input id="datepicker" name="birthday" class="input-full" type="text" placeholder="Birthday (DD/MM/YYYY)" >                               
                             </div>
                     </div>
                 
                     <div class="body-second">
-                        <input name="email" class="input-full" type="email" placeholder="name@example.com"><br>
+                        <input name="email" class="input-full" type="email" placeholder="name@example.com" ><br>
                         <label style="font-size:14px;color:#666;" for="email">This will be your new Apple ID.</label><br>
-                        <input name="password" class="input-full" type="password" placeholder="Password"><br>
-                        <input name="confirm-password" class="input-full" type="password" placeholder="Confirm password"><br>
+                        <input name="password" id="password" class="input-full" type="password" placeholder="Password" ><br>
+                        <input name="confirm_password" id="confirm_password" class="input-full" type="password" placeholder="Confirm password" ><span style="font-size: 12px;" id='message'></span>
                     </div>
 
                     <div class="body-third">
-                        <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone"><br>
+                        <input name="phone" class="input-full" type="tel" placeholder="Phone number" id="phone" name="phone" ><br>
                         <small>Be sure to enter a phone number you can always access. It will be used to verify your identity any time you sign in on a new device or web browser. Messaging or data rates may apply.</small>
                         <div class="third-verify">
-                            <label for="verify_width">Verify with:</label>
-                            <div>
-                                <input name="verify_with" type="radio" checked id="text-message" value="text-message">
-                                <label for="text-message">Text message</label>
-                            </div>
-                            <div>
-                                <input name="verify-with" type="radio" checked id="phone-call" value="phone-call">
-                                <label for="phone-call">Phone call</label>
-                            </div>
+                            <p for="verify_with">Verify with:</p>
+                                <input type="radio" name="verify_with" value="Text message" checked>
+                                <label for="Text message">Text message</label><br>
+                                <input type="radio" name="verify_with" value="Phone call">
+                                <label for="Phone call">Phone call</label><br>
                         </div>
                     </div>
                     
                     <div class="body-fourth">
                         <div>
-                            <input type="hidden" name="announcements" value="Not subcribed">
-                            <input type="checkbox" name="announcements" value="Subcribed">
+                            <!-- <input type="hidden" name="announcements" value="Not subcribed"> -->
+                            <input type="checkbox" name="announcements" value="Subcribed" checked>
                             <label for="announcements">Announcements</label><br>
                             <small>Receive Apple emails and communications including announcements, marketing, recommendations, and updates about Apple products, services and software.</small>
                         </div>
                         <div>
-                            <input type="hidden" name="ads" value="Not subcribed">
-                            <input type="checkbox" name="ads" value="Subcribed">
+                            <!-- <input type="hidden" name="ads" value="Not subcribed"> -->
+                            <input type="checkbox" name="ads" value="Subcribed" checked>
                             <label for="ads">Apps, Music, TV, and More</label><br>
                             <small>Receive Apple emails and communications including new releases, exclusive content, special offers, and marketing and recommendations for apps, music, movies, TV, books, podcasts, Apple Pay, Apple Card and more.</small>
                         </div>
