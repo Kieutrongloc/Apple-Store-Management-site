@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="../assets/font/fontawesome-free-6.2.0-web/css/all.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <title>Sign In - Apple</title>
 </head>
 <body>
@@ -37,10 +38,12 @@
             <h1>Sign in for faster checkout.</h1>
             <div id="section-centered">
                 <h2>Sign in to Apple Store</h2>
-                <div id="section-input">
-                    <input class="input-account" type="text" name="user" placeholder="Apple ID">
-                    <input class="input-account" type="password" name="password" placeholder="Password">
-                </div>
+                <form id="section-input">
+                    <input style="border-radius: 6px 6px 0px 0px;" class="input-account" type="text" name="user" placeholder="Apple ID">
+                    <div style="position: relative;display: flex;justify-content: flex-end;"><input style="border-radius: 0px 0px 6px 6px;" class="input-account" type="password" name="password" placeholder="Password">
+                        <div id="arrrow-login" href=""><i class="fa-solid fa-circle-arrow-right"></i></div>
+                    </div>
+                </form>
                 <div id="remember-me">
                     <input type="checkbox" name="remember" value="remember" checked>
                     <label for="remember">Remember me</label><br>
@@ -78,4 +81,5 @@
         <!-- FOOTER -->
     </div>
 </body>
+<script src="main.js"></script>
 </html>
