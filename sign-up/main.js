@@ -2,8 +2,8 @@ const appleAccount = {
     'post': 'http://localhost/www/manage_product/Apple-Store-Management-site/sign-up/rest-API/user-account-post.php',
 }
 function validateMyForm(){
-    document.getElementById('error_msg').innerHTML= '';
-    //var formData = new FormData(document.getElementById('form-signup'))
+    // document.getElementById('error_msg').innerHTML= '';
+    var formData = new FormData(document.getElementById('form-signup'))
     const form = document.getElementById('form-signup');
     const data = Object.fromEntries(new FormData(form).entries());  
 
@@ -13,7 +13,8 @@ function validateMyForm(){
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-        body: JSON.stringify(data) 
+        body: JSON.stringify(data)
+        
     })
 }
 
@@ -33,6 +34,10 @@ $('#password, #confirm_password').on('keyup', function () {
       $('#message').html('Not Matching').css({'color': 'red', 'display':'block'});
   });
 
+// clear form after click continue
+$("#form-submit").click(function () {
+  $("form").trigger("reset");
+});
 
 
 

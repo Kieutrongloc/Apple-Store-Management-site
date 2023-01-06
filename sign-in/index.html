@@ -39,9 +39,9 @@
             <div id="section-centered">
                 <h2>Sign in to Apple Store</h2>
                 <form id="section-input">
-                    <input style="border-radius: 6px 6px 0px 0px;" class="input-account" type="text" name="user" placeholder="Apple ID">
-                    <div style="position: relative;display: flex;justify-content: flex-end;"><input style="border-radius: 0px 0px 6px 6px;" class="input-account" type="password" name="password" placeholder="Password">
-                        <div id="arrrow-login" href=""><i class="fa-solid fa-circle-arrow-right"></i></div>
+                    <input style="border-radius: 6px 6px 0px 0px;" class="input-account" id="user-id" type="text" name="user" placeholder="Apple ID">
+                    <div style="position: relative;display: flex;justify-content: flex-end;"><input style="border-radius: 0px 0px 6px 6px;" class="input-account" id="user-pw" type="password" name="password" placeholder="Password">
+                        <div onclick="signIn()" id="arrrow-login" href=""><i class="fa-solid fa-circle-arrow-right"></i></div>
                     </div>
                 </form>
                 <div id="remember-me">
