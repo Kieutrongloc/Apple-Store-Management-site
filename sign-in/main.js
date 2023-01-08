@@ -2,35 +2,47 @@ const appleAccount = {
     'get': 'http://localhost/www/manage_product/Apple-Store-Management-site/sign-in/rest-api//user-account-get.php',
 }
 
-// function getAccountInfo() {
-//     fetch(appleAccount.get)
-//     .then(function(accountinfo) {
-//         var accountData = JSON.parse(accountinfo);
-//         console.log(accountData);
-//     })
-// }
-// getAccountInfo()
+
+function start(){
+    hideMessage();
+}
+start();
+//Log in
 
 function signIn() {
     //get data
-    var userId = document.getElementById("user-id").value
-    var userPw = document.getElementById("user-pw").value
+    let userId = document.getElementById("user-id").value
+    let userPw = document.getElementById("user-pw").value
+    let alertMessage = document.getElementById("alert-message")
     $.ajax({
-        url : appleAccount.get, // my php file
-        type : 'GET', // type of the HTTP request
+        url : appleAccount.get,
+        type : 'GET',
         success : function(result){ 
             var accountList = jQuery.parseJSON(result);
             for (var i=0;i<accountList.length;i++) {
-                let emailDb = accountList[i].email;
-                let passwordDb = accountList[i].password;
-                if (userId==''){
-                    alert("Please enter your Apple ID")
+                var emailDb = accountList[i].email;
+                var passwordDb = accountList[i].password;
+                var nameDb = accountList[i].first_name;
+                if (userId=='' || userPw==''){
+                    alertMessage.innerHTML="Please enter both fields";
                 } else if (userId==emailDb && userPw==passwordDb){
-                    window.location.href= "http://google.com";
+                    window.location.href= "http://google.com"+"/"+nameDb;
+                } else {
+                    alertMessage.innerHTML="Apple ID or password is invalid";
                 }
-                console.log(emailDb)
             }
         }
         
     });
 }
+
+function hideMessage(){
+    let alertMessage = document.getElementById("alert-message")
+    let userInput = document.getElementsByClassName("input-account")
+    // userInput.addEventListener("click", alert())
+    console.log(userInput)
+}
+
+// else if (userInput.addEventListener("change")){
+//     alertMessage.style.display="none";
+// }

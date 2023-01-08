@@ -169,6 +169,14 @@ h2 {
     color:rgb(100, 97, 97);
 }
 
+#alert-message {
+    position: absolute;
+    color: red;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 46px;
+}
+
 #remember-me {
     padding: 16px 0px 22px;
     width: 100%;
