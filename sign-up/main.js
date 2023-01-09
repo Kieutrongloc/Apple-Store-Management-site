@@ -6,7 +6,6 @@ function validateMyForm(){
     var formData = new FormData(document.getElementById('form-signup'))
     const form = document.getElementById('form-signup');
     const data = Object.fromEntries(new FormData(form).entries());  
-
     fetch(appleAccount.post,{
         method: 'POST',
         headers: {
@@ -34,10 +33,10 @@ $('#password, #confirm_password').on('keyup', function () {
       $('#message').html('Not Matching').css({'color': 'red', 'display':'block'});
   });
 
-// clear form after click continue
-$("#form-submit").click(function () {
-  $("form").trigger("reset");
-});
+// // clear form after click continue
+// $("#form-submit").click(function () {
+//   $("form").trigger("reset");
+// });
 
 
 
